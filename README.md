@@ -819,16 +819,17 @@ Cuando tienes una expresión con múltiples operadores, JavaScript necesita sabe
 
 **Precedencia y asociatividad** son dos conceptos fundamentales que JavaScript utiliza para resolver expresiones matemáticas y lógicas complejas de manera consistente. La precedencia determina qué tipo de operador tiene prioridad sobre otros cuando están mezclados en una expresión; por ejemplo, en `2 + 3 * 4`, la multiplicación tiene mayor precedencia que la suma, por lo que se evalúa primero como `2 + (3 * 4) = 14`. Por otro lado, la asociatividad entra en juego cuando tenemos operadores del mismo nivel de precedencia y define la dirección en que se evalúan: de izquierda a derecha para la mayoría de operadores como en `10 - 5 - 2 = (10 - 5) - 2 = 3`, o de derecha a izquierda para casos especiales como la potencia en `2 ** 3 ** 2 = 2 ** (3 ** 2) = 512`. En esencia, la precedencia responde "¿cuál operador hago primero?" mientras que la asociatividad responde "¿en qué dirección evalúo cuando son del mismo nivel de precedencia?", trabajando juntas para garantizar que JavaScript interprete nuestras expresiones de manera predecible y matemáticamente correcta.
 
-| Operador | Asociatividad             | Ejemplo                  |
-|----------|---------------------------|--------------------------|
-| `()`     | N/A                       | (2 + 3) * 4              |
-| `**`     | Derecha a izquierda       | 2 ** 3 ** 2 = 2 ** (3 ** 2) |
-| `*`, `/`, `%` | Izquierda a derecha | 8 / 4 / 2 = (8 / 4) / 2  |
-| `+`, `-` | Izquierda a derecha       | 10 - 5 - 2 = (10 - 5) - 2 |
-| `===`, `!==`, `>`, `<`, `>=`, `<=` | Izquierda a derecha | 1 < 2 < 3 = (1 < 2) && (2 < 3) |
-| `!`      | Derecha a izquierda       | ! ! true = ! (! true)    |
-| `&&`     | Izquierda a derecha       | A && B && C = (A && B) && C |
-| `||`     | Izquierda a derecha       | A || B || C = (A || B) || C |
+| Operador | Asociatividad             | Ejemplo                          |
+|----------|---------------------------|----------------------------------|
+| `()`     | N/A                       | `(2 + 3) * 4`                    |
+| `**`     | Derecha a izquierda       | `2 ** 3 ** 2 = 2 ** (3 ** 2)`    |
+| `*`, `/`, `%` | Izquierda a derecha | `8 / 4 / 2 = (8 / 4) / 2`        |
+| `+`, `-` | Izquierda a derecha       | `10 - 5 - 2 = (10 - 5) - 2`      |
+| `===`, `!==`, `>`, `<`, `>=`, `<=` | Izquierda a derecha | `1 < 2 < 3 = (1 < 2) && (2 < 3)` |
+| `!`      | Derecha a izquierda       | `! ! true = ! (! true)`          |
+| `&&`     | Izquierda a derecha       | `A && B && C = (A && B) && C`    |
+| `\|\|`   | Izquierda a derecha       | `A \|\| B \|\| C = (A \|\| B) \|\| C` |
+
 
 **Asociatividad:** Cuando operadores tienen la misma precedencia (ej. `*` y `/`), la asociatividad define el orden. La mayoría de los operadores aritméticos en JavaScript son asociativos a la izquierda (se evalúan de izquierda a derecha). `a / b * c` es `(a / b) * c`. La potencia `**` es asociativa a la derecha: `2 ** 3 ** 2` es `2 ** (3 ** 2)`, o sea `2 ** 9`.
 
